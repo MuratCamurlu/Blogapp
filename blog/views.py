@@ -4,9 +4,11 @@ from rest_framework.viewsets import ModelViewSet
 from .models import Category,Blog
 from .serializers import CategorySerializer,BlogSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly 
+from .permissions import IsAdminOrReadOnly
 class CategoryView(ModelViewSet):
     queryset=Category.objects.all()
     serializer_class=CategorySerializer
+    permission_classes=[IsAdminOrReadOnly]
     filterset_fields=['name']
 class BlogView(ModelViewSet):
     queryset=Blog.objects.all()
