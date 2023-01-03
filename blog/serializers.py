@@ -20,6 +20,6 @@ class BlogSerializer(serializers.ModelSerializer):
             'content',
             'category_id',
             'category',
-            'is_pubished',
+            'is_published',
             'created_date',
         )
